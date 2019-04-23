@@ -9,13 +9,13 @@ This package provides Codica's .eslintrc as an extensible shared config.
 ### Install the config via `npm`
 
 ```bash
-  npm install eslint-config-codica --save-dev
+npm install eslint-config-codica --save-dev
 ```
 
 ### or via `yarn`
 
 ```bash
-  yarn add -D eslint-config-codica
+yarn add -D eslint-config-codica
 ```
 
 ### Extend our config in your `.eslintrc` file:
@@ -43,17 +43,16 @@ If you don't need a `React` and `Prettier` onboard - `eslint-config-codica-base`
 This config includes `eslint-config-prettier` and `eslint-config-prettier/react`. To feel up all advantages of automatic code formatting just add [prettier](https://prettier.io) to your project.
 
 ```bash
-  yarn add -D prettier
+yarn add -D prettier
 ```
 
- and add `.prettierrc` to your project root with such a config to avoid conflicts with `airbnb` and `prettier` eslint configs.
+and add `.prettierrc` to your project root with such a config to avoid conflicts with `airbnb` and `prettier` eslint configs.
 
 ```json
 {
   "singleQuote": true,
   "trailingComma": "all"
 }
-
 ```
 
 ### Pre-commit hooks
@@ -65,7 +64,7 @@ The configuration steps is next:
 1. Install packages:
 
 ```bash
-  yarn add -D husky lint-staged
+yarn add -D husky lint-staged
 ```
 
 2. Add some configuration to `rc` files or to `package.json` directly:
