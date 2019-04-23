@@ -1,12 +1,16 @@
 {
   "name": "eslint-config-codica",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package provides Codica's .eslintrc as an extensible shared config.",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js",
     "lint:write": "./node_modules/.bin/eslint --debug . --fix",
     "prettier": "./node_modules/.bin/prettier --write ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codica2/eslint-config-codica"
   },
   "keywords": [
     "eslint",
@@ -16,6 +20,10 @@
   ],
   "author": "Alex Malinin (https://github.com/alexmalinin)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codica2/eslint-config-codica/issues"
+  },
+  "homepage": "https://github.com/codica2/eslint-config-codica",
   "lint-staged": {
     "*.(js|jsx)": [
       "yarn lint:write",
