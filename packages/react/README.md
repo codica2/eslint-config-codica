@@ -1,27 +1,27 @@
-# eslint-config-react-ts
+# eslint-config-react
 This package provides Codica's .eslintrc as an extensible shared config.
 
 ## Usage
 
-## eslint-config-react-ts
+## eslint-config-react
 
 ### Install the config via `npm`
 
 ```bash
-npm install @codica/eslint-config-react-ts --save-dev
+npm install @codica/eslint-config-react --save-dev
 ```
 
 ### or via `yarn`
 
 ```bash
-yarn add -D @codica/eslint-config-react-ts
+yarn add -D @codica/eslint-config-react
 ```
 
 ### Extend our config in your `.eslintrc` file:
 
 ```json
 {
-  "extends": ["@codica/eslint-config-react-ts"]
+  "extends": ["@codica/eslint-config-react"]
 }
 ```
 
