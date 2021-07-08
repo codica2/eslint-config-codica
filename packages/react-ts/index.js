@@ -63,7 +63,7 @@ module.exports = {
       {
         'newlines-between': 'always',
         pathGroups: [
-          { pattern: '{react,next,gatsby}', group: 'builtin', position: 'before', parserOptions: { "matchBase": true } },
+          { pattern: '{react,next,next/**,gatsby}', group: 'builtin', position: 'before', parserOptions: { "matchBase": true } },
           {
             pattern: '@material-ui/**',
             group: 'external',
@@ -75,9 +75,15 @@ module.exports = {
             group: 'external',
             position: 'after'
           },
+          // 
+          {
+            pattern: '~/{hooks,contexts,state,services,utils,validation,schemas,utilities}/**',
+            group: 'external',
+            position: 'after'
+          },
           // Assets and static data
           {
-            pattern: '~/{assets,static,styles,theme,i18n,data}/**',
+            pattern: '~/{assets,static,styles,theme,i18n,data,constants}/**',
             group: 'external',
             position: 'after'
           },
@@ -93,6 +99,9 @@ module.exports = {
     ],
     'import/named': 'off',
     'unused-imports/no-unused-imports': 'warn',
+    'no-nested-ternary': 'off',
+    'jsx-a11y/alt-text': 'warn',
+    'button-has-type': 'off',
     camelcase: 'off',
 
     // Typescript
@@ -104,11 +113,17 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
-    '@typescript-eslint/ban-ts-ignore': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars-experimental': 'off',
+    '@typescript-eslint/no-unused-vars-experimental': [
+      'error',
+      {
+        ignoredNamesRegex: '^_',
+        ignoreArgsIfArgsAfterAreUsed: true
+      }
+    ],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
@@ -128,18 +143,26 @@ module.exports = {
       {
         selector: 'variable',
         format: ['camelCase', 'PascalCase', 'UPPER_CASE', 'snake_case'],
+        leadingUnderscore: 'allow'
       },
       {
         selector: 'function',
         format: ['camelCase', 'PascalCase'],
       },
       {
+        selector: 'enum',
+        format: ['UPPER_CASE', 'PascalCase'],
+      },
+      {
         selector: 'typeLike',
         format: ['PascalCase'],
-      },
+      }
     ],
 
     // React
+    'react/destructuring-assignment': 'warn',
+    'react/no-array-index-key': 'warn',
+    'react/jsx-no-duplicate-props': ['error', { 'ignoreCase': false }],
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
     'react/jsx-uses-react': 'off',
