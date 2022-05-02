@@ -14,10 +14,9 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'prettier/react',
-    'prettier/@typescript-eslint'
+    'prettier',
   ],
-  plugins: ['@typescript-eslint', 'security', 'react', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'security', 'react'],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: './tsconfig.json',
@@ -65,7 +64,7 @@ module.exports = {
         pathGroups: [
           { pattern: '{react,next,next/**,gatsby}', group: 'builtin', position: 'before', parserOptions: { "matchBase": true } },
           {
-            pattern: '@material-ui/**',
+            pattern: '@mui/**',
             group: 'external',
             position: 'after'
           },
@@ -77,13 +76,13 @@ module.exports = {
           },
           // 
           {
-            pattern: '~/{hooks,contexts,state,services,utils,validation,schemas,utilities}/**',
+            pattern: '~/{hooks,contexts,state,services,utils,validation}/**',
             group: 'external',
             position: 'after'
           },
           // Assets and static data
           {
-            pattern: '~/{assets,static,styles,theme,i18n,data,constants}/**',
+            pattern: '~/{assets,static,styles,theme,i18n,data}/**',
             group: 'external',
             position: 'after'
           },
@@ -98,9 +97,7 @@ module.exports = {
       }
     ],
     'import/named': 'off',
-    'unused-imports/no-unused-imports': 'warn',
     'no-nested-ternary': 'off',
-    'jsx-a11y/alt-text': 'warn',
     'button-has-type': 'off',
     camelcase: 'off',
 
@@ -115,15 +112,6 @@ module.exports = {
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/ban-ts-ignore': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars-experimental': [
-      'error',
-      {
-        ignoredNamesRegex: '^_',
-        ignoreArgsIfArgsAfterAreUsed: true
-      }
-    ],
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
@@ -162,7 +150,7 @@ module.exports = {
     // React
     'react/destructuring-assignment': 'warn',
     'react/no-array-index-key': 'warn',
-    'react/jsx-no-duplicate-props': ['error', { 'ignoreCase': false }],
+    // 'react/jsx-no-duplicate-props': ['error', { 'ignoreCase': false }],
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
     'react/jsx-uses-react': 'off',
