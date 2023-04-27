@@ -1,6 +1,6 @@
 {
   "name": "@codica/eslint-config-react-ts",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "This package provides Codica's .eslintrc as an extensible shared config.",
   "author": "Eugene Volkov (https://github.com/jk-volkov)",
   "license": "MIT",

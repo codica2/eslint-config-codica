@@ -62,7 +62,7 @@ module.exports = {
       {
         'newlines-between': 'always',
         pathGroups: [
-          { pattern: '{react,next,next/**,gatsby}', group: 'builtin', position: 'before', parserOptions: { "matchBase": true } },
+          { pattern: '{react,next,next/**,gatsby}', group: 'builtin', position: 'before' },
           {
             pattern: '@mui/**',
             group: 'external',
@@ -111,7 +111,6 @@ module.exports = {
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-unsafe-member-access': 'off',
     '@typescript-eslint/ban-ts-comment': 'warn',
-    '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-shadow': 'off',
